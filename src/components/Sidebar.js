@@ -7,7 +7,7 @@ const useStyles = makeStyles({
         background: "black",
     },
     drawerButton: {
-        width: "200px",
+        width: "190px",
         textDecoration: "none",
         color: "White",
         backgroundColor: "#292929",
