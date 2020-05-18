@@ -1,8 +1,10 @@
 import React from 'react'
 import "../style.css";
-import { AppBar, makeStyles, Toolbar, Avatar, InputBase, Divider, Grid } from '@material-ui/core';
+import { AppBar, Button, makeStyles, Toolbar, Avatar, InputBase, Divider, Grid, Typography, Menu, MenuItem } from '@material-ui/core';
 import { fade } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import LanguageIcon from '@material-ui/icons/Language';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,15 +54,29 @@ const useStyles = makeStyles((theme) => ({
           width: '20ch',
         },
       },
+      guestButton: {
+        width: "120px",
+        color: "White",
+
+      }
 }));
 
 export const Navigation = () => {
     const classes = useStyles();
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
 
     return (
         <div className={classes.appbarStyle}>
             
-            <AppBar position="static">
+            <AppBar position="static" color="primary">
                 <Toolbar>
                     
                     <Grid item xs={1}></Grid>
@@ -80,9 +96,26 @@ export const Navigation = () => {
                 </div>
                 <div className={classes.grow} />
 
-                <Divider orientation="vertical" variant="middle" light="true" flexItem>
+                <LanguageIcon></LanguageIcon>
+                
+                <Divider variant="middle" orientation="vertical" ></Divider>
 
-                </Divider>
+                <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} color="secondary">
+
+                <Typography>Guest</Typography>
+                <ExpandMoreIcon></ExpandMoreIcon>
+
+                </Button>
+                <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={handleClose}>LOGIN</MenuItem>
+                  <MenuItem onClick={handleClose}>REGISTER</MenuItem>
+                </Menu>
 
                 <Avatar></Avatar>
 

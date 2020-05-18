@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import { Navigation } from './components/Navigation.js';
 import { Sidebar } from './components/Sidebar.js';
 import { ThemeProvider } from '@material-ui/core/styles';
