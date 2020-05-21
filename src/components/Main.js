@@ -1,5 +1,6 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core';
+import React, { Fragment } from 'react'
+import { makeStyles, Typography } from '@material-ui/core';
+import Chart from './Chart';
 
 const useStyles = makeStyles({
     mainArea: {
@@ -7,9 +8,12 @@ const useStyles = makeStyles({
         height: "100vh",
         backgroundImage: "linear-gradient(#181818, black)",
     },
-    partTwo: {
-
-    },
+    content1: {
+        width: "80%",
+        marginLeft: "15%",
+        backgroundColor: "red",
+        padding: "0",
+    }
 });
 
 export const Main = props => {
@@ -17,11 +21,19 @@ export const Main = props => {
 
     return(
 
-        <div>
+        <Fragment>
 
-            <div className={classes.mainArea}></div>
+        <div className={classes.mainArea}>
+
+            <div className={classes.content1}>
+                <Typography variant="h4">Professional Teams</Typography>
+            </div>
+
+            <Chart />
 
         </div>
+
+        </Fragment>
 
     );
 };

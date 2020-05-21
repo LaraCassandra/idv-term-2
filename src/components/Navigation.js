@@ -57,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
       guestButton: {
         width: "120px",
         color: "White",
-
       }
 }));
 

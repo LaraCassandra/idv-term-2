@@ -27,7 +27,7 @@ const useStyles = makeStyles({
         textAlign: "left",
         marginLeft: "20%",
         letterSpacing: "1px",
-        fontSize: "18px",
+        fontSize: "15px",
         float: "left",
         paddingTop: "20px",
     },
@@ -37,7 +37,7 @@ const useStyles = makeStyles({
         textAlign: "left",
         marginLeft: "37%",
         letterSpacing: "1px",
-        fontSize: "18px",
+        fontSize: "15px",
         paddingTop: "20px",
     },
 });
