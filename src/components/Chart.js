@@ -1,40 +1,51 @@
 import React, { Component } from 'react';
-import { Bar } from 'react-chartjs-2';
+import { HorizontalBar } from 'react-chartjs-2';
 
-
-class Chart extends Component{
+class Chart extends Component {
     constructor(props){
         super(props);
         this.state = {
-            chartData:{
-                lables: [
-                    'Boston',
-                    'Worcester'
-                ],
-                datasets:[
-                    {
-                        label: "Population",
-                        data:[
-                            123,
-                            546
-                        ],
-                        backgroundColor: [
-                            'red',
-                            'blue'
-                        ]
-                    }
-                ]
-            }
+            chartData:props.chartData
         }
     }
 
+static defaultProps = {
+    displayTitle: true,
+    displayLegend: false,
+}
+
     render(){
         return(
-            <div className="chart">
-                <Bar
-                data = {this.state.chartData}
+            <div className="Chart">
+                <HorizontalBar 
+                data={this.state.chartData}
                 options={{
-                    maintainAspectRatio: false
+                    layout:{
+                        padding:{
+                            left:0,
+                            right:0,
+                            top:0,
+                            bottom:0
+                        }
+                    },
+                    scales:{
+                        xAxes:[{
+                            stacked:true,
+                            gridLines: false
+                        }],
+                        yAxes:[{
+                            stacked:true,
+                            gridLines: false
+                        }]
+                    },
+                    title:{
+                        display:this.props.displayTitle,
+                        text:'Professional Teams',
+                        fontSize: 20
+                    },
+                    legend:{
+                        display:this.props.displayLegend,
+                    }
                 }}
                 />
             </div>

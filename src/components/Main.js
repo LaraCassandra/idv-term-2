@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { makeStyles, Typography } from '@material-ui/core';
-import Chart from './Chart';
+import Teams from './Teams'
+
 
 const useStyles = makeStyles({
     mainArea: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles({
     content1: {
         width: "80%",
         marginLeft: "15%",
-        backgroundColor: "red",
+        backgroundColor: "#303030",
         padding: "0",
     }
 });
@@ -27,9 +28,10 @@ export const Main = props => {
 
             <div className={classes.content1}>
                 <Typography variant="h4">Professional Teams</Typography>
+            
+                <Teams />
+            
             </div>
-
-            <Chart />
 
         </div>
 
