@@ -32,6 +32,7 @@ const useStyles = makeStyles({
         backgroundSize: "contain",
         backgroundPosition: "center",
     },
+
 });
 
 
@@ -46,7 +47,7 @@ export const Sidebar = props => {
                 <div className={classes.extraSpace}>
 
                 <div className={classes.dtLogo}>
-                    <img alt="logo"/>
+                    <img className={classes.dtLogo} src="../images/LOGO.jpg" alt="logo" />
                 </div>
                 
                     <Button className={classes.drawerButton}>

@@ -19,16 +19,16 @@ class Teams extends Component {
                 labels: ['Team Liquid', 'Alliance', 'BlinkPool', 'Gambit Esports'],
                 datasets: [
                     {
-                        label: 'Win',
+                        label: 'WIN',
                         data:[60,40, 77, 54],
-                        backgroundColor: 'green',
-                        barThickness: 20,
+                        backgroundColor: 'blue',
+                        barThickness: 50,
                     },
                     {
-                        label: 'Lose',
+                        label: 'LOSS',
                         data:[40,60, 23, 46],
-                        backgroundColor:'red',
-                        barThickness: 20
+                        backgroundColor:'#202020',
+                        barThickness: 50
                     },
                 ],
             }

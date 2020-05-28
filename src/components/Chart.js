@@ -40,12 +40,12 @@ static defaultProps = {
                     },
                     title:{
                         display:this.props.displayTitle,
-                        text:'Professional Teams',
-                        fontSize: 20
+                        text:'WIN / LOSS RATIO',
+                        fontSize: 15
                     },
                     legend:{
                         display:this.props.displayLegend,
-                    }
+                    },
                 }}
                 />
             </div>
