@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HorizontalBar } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 
 class Chart extends Component {
     constructor(props){
@@ -17,7 +17,7 @@ static defaultProps = {
     render(){
         return(
             <div className="Chart">
-                <HorizontalBar 
+                <Doughnut 
                 data={this.state.chartData}
                 options={{
                     layout:{
@@ -30,11 +30,9 @@ static defaultProps = {
                     },
                     scales:{
                         xAxes:[{
-                            stacked:true,
                             gridLines: false
                         }],
                         yAxes:[{
-                            stacked:true,
                             gridLines: false
                         }]
                     },

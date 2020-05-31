@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react'
-import { makeStyles, Typography } from '@material-ui/core';
-import Teams from './Teams'
-import ListItem from './ListItem'
-import TeamData from './TeamData'
+import { makeStyles, Typography, Divider } from '@material-ui/core';
+import TeamsChart from './TeamsChart'
+import TeamButton from './TeamsButton'
+import { TeamPlayers } from "./TeamPlayers";
+import Heroes from "./Heroes"
+
 
 const useStyles = makeStyles({
     mainArea: {
         width: "auto",
-        height: "100vh",
+        height: "3300px",
         backgroundImage: "linear-gradient(#181818, black)",
     },
     content1: {
@@ -17,14 +19,46 @@ const useStyles = makeStyles({
         padding: "20px",
         float: "left"
     },
-    graph: {
-        width: "50%",
-        float: "right",
-    },
-    list: {
-        marginTop: "50px",
+    content2: {
+        width: "80%",
+        marginLeft: "15%",
+        color: "white",
+        padding: "20px",
         float: "left"
-    }
+    },
+    title: {
+        textAlign: "left",
+        fontSize: "27px",
+        marginLeft: "60px",
+        marginTop: "20px",
+        textTransform: "uppercase"
+    },
+    subtitle: {
+        textAlign: "left",
+        fontSize: "25px",
+        marginLeft: "60px",
+        marginTop: "20px",
+        textTransform: "uppercase"
+    },
+    graph: {
+        width: "45%",
+        float: "left",
+        marginLeft: "20px",
+        marginTop: "50px"
+    },
+    TeamButtons: {
+        marginTop: "50px",
+    },
+    herolist: {
+        marginLeft: "20px",
+        marginTop: "50px"
+    },
+    dividerColour: {
+        height: "1px",
+        backgroundColor: "#484848",
+        marginLeft: "50px",
+        marginTop: "20px",
+    },
 });
 
 export const Main = props => {
@@ -36,20 +70,42 @@ export const Main = props => {
 
         <div className={classes.mainArea}>
 
+            
+
+            {/* CONTENT 1 - PROFESSIONAL TEAMS */}
             <div className={classes.content1}>
-                <Typography variant="h5">Professional Teams</Typography>
+            <Divider></Divider>
+                
+                <Typography className={classes.title}>Professional Teams</Typography>
+                <Divider s={0} variant="middle" orientation="horizontal" classes={{root: classes.dividerColour}}></Divider>
 
-            <div className={classes.list}>
-                <TeamData />
-                <ListItem />
-                <ListItem />
-                <ListItem />
-                <ListItem />
+                <div className={classes.TeamButtons}>
+                    <TeamButton />
+                </div>
+
+                <Typography className={classes.subtitle}>Players</Typography>
+
+                <div className={classes.graph}>
+                    <TeamPlayers />
+                </div>
+
+                <div className={classes.graph}>
+                    <TeamsChart />
+                </div>
+
             </div>
 
-            <div className={classes.graph}>
-                <Teams />
-            </div>
+
+
+            {/* CONTENT 2 - HEROES */}
+            <div className={classes.content2}>
+
+                <Typography className={classes.title}>HEROES</Typography>
+                <Divider s={0} variant="middle" orientation="horizontal" classes={{root: classes.dividerColour}}></Divider>
+
+                <div className={classes.herolist}>
+                    <Heroes />
+                </div>
 
             </div>
 

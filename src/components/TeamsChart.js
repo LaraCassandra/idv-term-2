@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Chart from './Chart'
 
-class Teams extends Component {
+class TeamsChart extends Component {
     constructor(){
         super();
         this.state = {
@@ -16,21 +16,18 @@ class Teams extends Component {
     getChartData(){
         this.setState({
             chartData:{
-                labels: ['Team Liquid', 'Alliance', 'BlinkPool', 'Gambit Esports'],
                 datasets: [
                     {
-                        label: 'WIN',
-                        data:[60,40, 77, 54],
-                        backgroundColor: 'blue',
-                        barThickness: 50,
-                    },
-                    {
-                        label: 'LOSS',
-                        data:[40,60, 23, 46],
-                        backgroundColor:'#202020',
-                        barThickness: 50
+                        data:[40, 60],
+                        backgroundColor: [ '#202020', '#BF2200',],
+                        borderWidth: '1',
+                        borderColor: 'black'
                     },
                 ],
+                labels: [
+                    'LOSS',
+                    'WIN'
+                ]
             }
         });
     }
@@ -44,4 +41,4 @@ class Teams extends Component {
     }
 }
 
-export default Teams
+export default TeamsChart

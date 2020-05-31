@@ -13,7 +13,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Sidebar />
         <Navigation />
-        < Main />
+        <Main />
         <Footer />
       </ThemeProvider>
     </div>

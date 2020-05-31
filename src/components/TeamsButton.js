@@ -1,19 +1,21 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles, Typography, Button } from '@material-ui/core';
 
 const useStyles = makeStyles({
     item: {
         listStyle: "none",
         backgroundColor: "#202020",
-        width: "600px",
-        height: "20px",
-        textAlign: "left",
+        width: "300px",
+        height: "300px",
         padding: "20px",
-        marginBottom: "10px"
+        marginBottom: "10px",
+        marginRight: "10px",
+        float: "left",
+        color: "white"
     }
 });
 
-export const TeamData = () => {
+export const TeamButton = () => {
     const classes = useStyles();
 
     const [teams, setTeams] = useState([])
@@ -29,32 +31,22 @@ export const TeamData = () => {
         })
     }, [])
 
-    const handleOnChange = (e) => {
-
-    }
 
     return (
         <Fragment>
-            {/*
-            <form>
-                <select onChange={handleOnChange}>
-                    <label>Sort Rating</label>
-                    <option value="Ascending">Ascending</option>
-                    <option value="Descending">Desecending</option>
-                </select>
-            </form>
-            */}
 
             <ul>
                {teams.length
                ? teams.map(s => {
                    return (
+                    <Button>
                        <li key={s.id} className={classes.item}>
                            <Typography>success rate: {s.success_rate_pct}</Typography>
                        </li>
+                    </Button>
                    );
                })
-            : "no ships available"} 
+            : "no teams available"} 
             </ul>
 
         {/* <pre>{JSON.stringify(teams, null, 2)}</pre> */}
@@ -63,4 +55,4 @@ export const TeamData = () => {
     )
 }
 
-export default TeamData
+export default TeamButton

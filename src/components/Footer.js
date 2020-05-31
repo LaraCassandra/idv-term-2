@@ -19,7 +19,7 @@ const useStyles = makeStyles({
         height: "1px",
         backgroundColor: "#484848",
         marginLeft: "20%",
-        marginRight: "10%",
+        marginRight: "5%",
     },
     footerText: {
         color: "#A9A9A9",
