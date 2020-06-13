@@ -39,7 +39,7 @@ export const About = () => {
           ? rocket.map((s) => {
               return (
                 <li key={s.id} className={classes.item}>
-                  <Typography variant="h6">{s.founder}</Typography>
+                  <Typography>{s.founder}</Typography>
                 </li>
               );
             })
