@@ -4,12 +4,12 @@ import { makeStyles, Typography } from "@material-ui/core";
 const useStyles = makeStyles({
   item: {
     listStyle: "none",
-    border: "1px solid #014871",
-    width: "290px",
-    height: "40px",
-    padding: "20px",
-    marginBottom: "50px",
-    marginRight: "30px",
+    backgroundColor: "#232323",
+    borderLeft: "5px solid red",
+    width: "328px",
+    height: "80px",
+    margin: "0 30px 30px 0",
+    paddingTop: "15px",
     color: "white",
     float: "left",
   },
@@ -39,6 +39,9 @@ export const Rockets = () => {
               return (
                 <li key={s.id} className={classes.item}>
                   <Typography variant="h6">{s.rocket_name}</Typography>
+                  <Typography variant="subtitle2">
+                    First Flight:{s.first_flight}
+                  </Typography>
                 </li>
               );
             })

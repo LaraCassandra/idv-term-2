@@ -1,47 +1,58 @@
 import React, { Fragment } from "react";
 import { makeStyles, Typography, Divider } from "@material-ui/core";
-import About from "./About";
+import Launches from "./About/Launches";
 import Rockets from "./Rockets/Rockets";
 import Ships from "./Ships/Ships";
 import RocketChart from "./Rockets/RocketChart";
+import RocketSuccessChart from "./Rockets/RocketSuccessChart";
+import ShipChart from "./Ships/ShipChart";
+import ShipWeightChart from "./Ships/ShipWeightChart";
+import CapsuleLandings from "./Capsules/CapsuleLandings";
+import Missions from "./About/Missions";
+import History from "./About/History";
+import LaunchPads from "./About/LaunchPads";
+import Info from "./About/Info";
+import CapsuleMissions from "./Capsules/CapsuleMissions";
 
 const useStyles = makeStyles({
   mainArea: {
     width: "auto",
-    height: "3300px",
+    height: "3530px",
     backgroundImage: "linear-gradient(black, black)",
   },
   content: {
     width: "80%",
+
     marginLeft: "15%",
     color: "white",
     padding: "20px",
     float: "left",
+    marginBottom: "20px",
   },
   title: {
     textAlign: "left",
     fontSize: "27px",
     marginLeft: "60px",
-    marginTop: "20px",
+    marginTop: "10px",
     textTransform: "uppercase",
   },
   subtitle: {
     textAlign: "left",
-    fontSize: "25px",
-    marginLeft: "60px",
-    marginTop: "20px",
+    fontSize: "20px",
+    margin: "20px 0 30px 40px",
     textTransform: "uppercase",
   },
   graph: {
-    width: "50%",
-    marginLeft: "20px",
+    width: "43%",
+    margin: "0 0 40px 35px",
+    backgroundColor: "#1a1a1a",
+    padding: "20px",
+    float: "left",
   },
   dividerColour: {
-    height: "1px",
-    backgroundImage: "linear-gradient(130deg, #014871, #07a3b2)",
-    marginLeft: "50px",
-    marginTop: "20px",
-    marginBottom: "60px",
+    height: "3px",
+    backgroundImage: "linear-gradient(130deg, #014871, purple, red, orange)",
+    margin: "20px 0 60px 50px",
   },
 });
 
@@ -61,12 +72,19 @@ export const Main = (props) => {
             classes={{ root: classes.dividerColour }}
           ></Divider>
 
-          <About />
+          <Launches />
+          <Missions />
+          <History />
+          <LaunchPads />
+
+          <div>
+            <Info />
+          </div>
         </div>
 
-        {/* CONTENT 2 - SHIPS */}
+        {/* CONTENT 2 - CAPSULES */}
         <div className={classes.content}>
-          <Typography className={classes.title}>Ships</Typography>
+          <Typography className={classes.title}>CAPSULES</Typography>
           <Divider
             s={0}
             variant="middle"
@@ -74,10 +92,20 @@ export const Main = (props) => {
             classes={{ root: classes.dividerColour }}
           ></Divider>
 
-          <Ships />
+          <div className={classes.graph}>
+            <Typography className={classes.subtitle}>LANDINGS</Typography>
+            <CapsuleLandings />
+          </div>
+
+          <div className={classes.graph}>
+            <Typography className={classes.subtitle}>
+              NUMBER OF MISSIONS
+            </Typography>
+            <CapsuleMissions />
+          </div>
         </div>
 
-        {/* CONTENT 2 - HEROES */}
+        {/* CONTENT 3 - Rockets */}
         <div className={classes.content}>
           <Typography className={classes.title}>ROCKETS</Typography>
           <Divider
@@ -89,9 +117,40 @@ export const Main = (props) => {
 
           <Rockets />
 
+          {/* CONTENT 3 - Rockets */}
           <div className={classes.graph}>
+            <Typography className={classes.subtitle}>ROCKET HEIGHT</Typography>
             <RocketChart />
           </div>
+          <div className={classes.graph}>
+            <Typography className={classes.subtitle}>SUCCESS RATE</Typography>
+            <RocketSuccessChart />
+          </div>
+        </div>
+
+        {/* CONTENT 4 - SHIPS */}
+        <div className={classes.content}>
+          <Typography className={classes.title}>Ships</Typography>
+          <Divider
+            s={0}
+            variant="middle"
+            orientation="horizontal"
+            classes={{ root: classes.dividerColour }}
+          ></Divider>
+
+          <div className={classes.graph}>
+            <Typography className={classes.subtitle}>
+              NUMBER OF MISSIONS
+            </Typography>
+            <ShipChart />
+          </div>
+
+          <div className={classes.graph}>
+            <Typography className={classes.subtitle}>SHIP MASS</Typography>
+            <ShipWeightChart />
+          </div>
+
+          <Ships />
         </div>
       </div>
     </Fragment>

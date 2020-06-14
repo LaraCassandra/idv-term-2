@@ -11,16 +11,15 @@ const useStyles = makeStyles({
     backgroundImage: "black",
   },
   partTwo: {
-    width: "auto",
     height: "28px",
     backgroundColor: "black",
-    margin: "0 20px 0 0px",
+    margin: "0 20px 0 1700px",
+    paddingBottom: "20px",
   },
   dividerColour: {
-    height: "1px",
-    backgroundColor: "#484848",
-    marginLeft: "20%",
-    marginRight: "5%",
+    margin: "0 4% 0 19%",
+    height: "3px",
+    backgroundImage: "linear-gradient(130deg, #014871, purple, red, orange)",
   },
   footerText: {
     color: "#A9A9A9",
@@ -69,19 +68,10 @@ export const Footer = (props) => {
         </div>
       </div>
 
-      <div>
-        <FacebookIcon
-          className={classes.partTwo}
-          color="secondary"
-        ></FacebookIcon>
-        <TwitterIcon
-          className={classes.partTwo}
-          color="secondary"
-        ></TwitterIcon>
-        <InstagramIcon
-          className={classes.partTwo}
-          color="secondary"
-        ></InstagramIcon>
+      <div className={classes.partTwo}>
+        <FacebookIcon color="secondary"></FacebookIcon>
+        <TwitterIcon color="secondary"></TwitterIcon>
+        <InstagramIcon color="secondary"></InstagramIcon>
       </div>
     </div>
   );

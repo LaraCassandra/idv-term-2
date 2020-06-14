@@ -1,14 +1,13 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import axios from "axios";
 
-export const RocketChart = () => {
+export const RocketSuccessChart = () => {
   const [chartData, setChartData] = useState({});
   //const [successRate, setSuccessRate] = useState({});
 
   const chart = () => {
-    let rocketHeight = [];
-    let rocketMass = [];
+    let successRate = [];
     let rocketName = [];
 
     axios
@@ -16,21 +15,20 @@ export const RocketChart = () => {
       .then((res) => {
         console.log(res);
         for (const dataObj of res.data) {
-          rocketHeight.push(parseInt(dataObj.height.meters));
-          rocketMass.push(parseInt(dataObj.height.meters));
+          successRate.push(parseInt(dataObj.success_rate_pct));
           rocketName.push(dataObj.rocket_name);
         }
         setChartData({
           labels: rocketName,
           datasets: [
             {
-              label: "Height in Metres",
-              data: rocketHeight,
+              label: "Success Rate",
+              data: successRate,
+              backgroundColor: "rgba(255,0,0,0.1)",
               borderWidth: 3,
-              borderColor: ["#07a3b2", "purple", "red", "orange"],
-              hoverBackgroundColor: ["#07a3b2", "purple", "red", "orange"],
-              hoverBorderColor: "black",
-              barThickness: 80,
+              borderColor: "red",
+              hoverBorderColor: ["#07a3b2", "purple", "red", "orange"],
+              hoverBorderWidth: 5,
             },
           ],
         });
@@ -47,7 +45,7 @@ export const RocketChart = () => {
   return (
     <Fragment>
       <div>
-        <Bar
+        <Line
           data={chartData}
           option={{
             responsive: true,
@@ -76,4 +74,4 @@ export const RocketChart = () => {
   );
 };
 
-export default RocketChart;
+export default RocketSuccessChart;
