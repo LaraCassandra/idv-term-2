@@ -47,9 +47,9 @@ You will need to make sure you have installed all the dependencies so that the p
 $ npm install
 ```
 
-![Open Terminal](https://github.com/LaraCassandra/mean-term-2/blob/master/public/img/OpenTerminal.jpg "Open Terminal")
+![Open Terminal](https://github.com/LaraCassandra/idv-term-2/blob/master/public/images/new-terminal.png "Open Terminal")
 
-![Install Dependencies](https://github.com/LaraCassandra/mean-term-2/blob/master/public/img/InstallDependencies.JPG "Install Dependencies")
+![Install Dependencies](https://github.com/LaraCassandra/idv-term-2/blob/master/public/images/install-dependencies.png "Install Dependencies")
 
 <br />
 
@@ -71,7 +71,7 @@ or
 $ yarn start
 ```
 
-![Run Application](https://github.com/LaraCassandra/mean-term-2/blob/master/public/img/RunApp.JPG "Run Application")
+![Run Application](https://github.com/LaraCassandra/idv-term-2/blob/master/public/images/run-application.png "Run Application")
 
 <br/>
 
