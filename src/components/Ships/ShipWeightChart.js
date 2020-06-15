@@ -3,13 +3,15 @@ import { HorizontalBar } from "react-chartjs-2";
 import axios from "axios";
 
 export const ShipChart = () => {
+  //Create variable to contain the data to populate the chart
   const [chartData, setChartData] = useState({});
-  //const [successRate, setSuccessRate] = useState({});
 
+  //Create shipMass and shipName arrays to contain API data
   const chart = () => {
     let shipMass = [];
     let shipName = [];
 
+    //Call API and set the data to the arrays
     axios
       .get("https://api.spacexdata.com/v3/ships")
       .then((res) => {
@@ -17,6 +19,7 @@ export const ShipChart = () => {
           shipMass.push(parseInt(dataObj.weight_kg));
           shipName.push(dataObj.ship_name);
         }
+        //Set graph data with the arrays into the chartData variable
         setChartData({
           labels: shipName,
           datasets: [
@@ -85,6 +88,7 @@ export const ShipChart = () => {
     chart();
   }, []);
 
+  //Use Chart data to populate the chart
   return (
     <Fragment>
       <div>

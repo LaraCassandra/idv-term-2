@@ -1,68 +1,102 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **Rocket League**
 
-## Available Scripts
+#### By Lara Cook | 190218
 
-In the project directory, you can run:
+<br />
 
-### `yarn start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## **Introduction**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+**The Brief**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project required me to create an interactive dashboard making use of NPM, ReactJS and an API of my choice, as well as several other technologies - such as ChartJS, Yarn, Fetch and Axios. The information was required to be populated by an API that allowed users to compare information and choose what information they want to view.
 
-### `yarn build`
+**The Project**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Rocket League is a dynamic single page website that allows users to view visually displayed information, populated by the SpaceX API.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+This project assumes you have NPM. Before beginning, please make sure you have NPM correctly installed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**You can check in the console by using:**
 
-### `yarn eject`
+```
+$ npm -v
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You can download NodeJS at <https://nodejs.org/en/download/> <br>
+This will automatically download NPM.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## **Setup**
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+After downloading the code, navigate to the project folder in the console. Alternatively, open the project in Visual Studio Code and open the terminal.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You will need to make sure you have installed all the dependencies so that the project run properly.
 
-### Code Splitting
+**Install the dependencies:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+$ npm install
+```
 
-### Analyzing the Bundle Size
+![Open Terminal](https://github.com/LaraCassandra/mean-term-2/blob/master/public/img/OpenTerminal.jpg "Open Terminal")
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![Install Dependencies](https://github.com/LaraCassandra/mean-term-2/blob/master/public/img/InstallDependencies.JPG "Install Dependencies")
 
-### Making a Progressive Web App
+<br />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+---
 
-### Advanced Configuration
+## **Run**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+---
 
-### Deployment
+Once the dependencies are installed, you need to start the application so that you are able to open it in your browser.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+**Run the application:**
 
-### `yarn build` fails to minify
+```
+$ npm start
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+or
+
+$ yarn start
+```
+
+![Run Application](https://github.com/LaraCassandra/mean-term-2/blob/master/public/img/RunApp.JPG "Run Application")
+
+<br/>
+
+**You should now be able to open the project in your browser**
+
+Open [http://localhost:3000](http://localhost:3000) to view it.
+
+---
+
+## **Additional Information**
+
+---
+
+### Features:
+
+- A single page web application that portrays data in graphs and other visual elements from the SpaceX API
+- Includes basic information about SpaceX.
+- Shows the total number of SpaceX's launches, missions, historical events and launch pads.
+- Displays the Capsule missions and landings in relevant graphs
+- Displays all Rockets owned and used by SpaceX, as well as the names, height and weight of the rockets, and the success rates of the missions in visual elements, including tiles and graphs.
+- Displays all Ships owned and used by SpaceX, including the name, weight and images of the ships in visual elements.
+
+### Benefits:
+
+- Allows for easier understanding of large quantities of data.
+- Displays raw data in meaningful graphical representations.
+
+### **Thanks for your time! Hope you enjoy!**

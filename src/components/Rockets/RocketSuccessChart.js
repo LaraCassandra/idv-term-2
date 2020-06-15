@@ -3,13 +3,15 @@ import { Line } from "react-chartjs-2";
 import axios from "axios";
 
 export const RocketSuccessChart = () => {
+  //Create variable to contain the data to populate the charts
   const [chartData, setChartData] = useState({});
-  //const [successRate, setSuccessRate] = useState({});
 
+  //Make the successRate and rocketName arrays to contain the API data
   const chart = () => {
     let successRate = [];
     let rocketName = [];
 
+    //Call API and set the data to the arrays
     axios
       .get("https://api.spacexdata.com/v3/rockets")
       .then((res) => {
@@ -18,6 +20,7 @@ export const RocketSuccessChart = () => {
           successRate.push(parseInt(dataObj.success_rate_pct));
           rocketName.push(dataObj.rocket_name);
         }
+        //Set graph data with the arrays into the chartData variable
         setChartData({
           labels: rocketName,
           datasets: [
@@ -33,6 +36,7 @@ export const RocketSuccessChart = () => {
           ],
         });
       })
+      //Send an error if the API call fails
       .catch((err) => {
         console.log(err);
       });
@@ -42,6 +46,7 @@ export const RocketSuccessChart = () => {
     chart();
   }, []);
 
+  //Use the chartData variable to populate the chart
   return (
     <Fragment>
       <div>

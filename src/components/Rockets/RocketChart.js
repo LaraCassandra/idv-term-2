@@ -3,14 +3,16 @@ import { Bar } from "react-chartjs-2";
 import axios from "axios";
 
 export const RocketChart = () => {
+  //Create variable to contain the data to populate the chart
   const [chartData, setChartData] = useState({});
-  //const [successRate, setSuccessRate] = useState({});
 
+  //Making the rocketHeight, rocketMass and rocketName arrays to contain the API data
   const chart = () => {
     let rocketHeight = [];
     let rocketMass = [];
     let rocketName = [];
 
+    //Call API and set the data to the arrays
     axios
       .get("https://api.spacexdata.com/v3/rockets")
       .then((res) => {
@@ -20,6 +22,7 @@ export const RocketChart = () => {
           rocketMass.push(parseInt(dataObj.height.meters));
           rocketName.push(dataObj.rocket_name);
         }
+        //Set graph data with the arrays into the chartData variable
         setChartData({
           labels: rocketName,
           datasets: [
@@ -35,6 +38,7 @@ export const RocketChart = () => {
           ],
         });
       })
+      //Send an error if the API call fails
       .catch((err) => {
         console.log(err);
       });
@@ -44,6 +48,7 @@ export const RocketChart = () => {
     chart();
   }, []);
 
+  //Use the chartData variable to populate the chart
   return (
     <Fragment>
       <div>

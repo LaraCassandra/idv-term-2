@@ -18,14 +18,17 @@ const useStyles = makeStyles({
 export const Rockets = () => {
   const classes = useStyles();
 
+  //Create constants to set API data to
   const [rocket, setRockets] = useState([]);
 
+  //Call API and set data to setRocket array
   useEffect(() => {
     fetch("https://api.spacexdata.com/v3/rockets")
       .then((response) => response.json())
       .then((data) => {
         setRockets(data);
       })
+      //Send an error if the API call fails
       .catch((err) => {
         console.log(`Fetch failed: ${err}`);
       });

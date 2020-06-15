@@ -3,27 +3,31 @@ import { Line } from "react-chartjs-2";
 import axios from "axios";
 
 export const ShipChart = () => {
+  //Create variable to contain the data to populate the chart
   const [chartData, setChartData] = useState({});
-  //const [successRate, setSuccessRate] = useState({});
 
+  //Making the shipMissions and shipName arrays to contain the API data
   const chart = () => {
-    let shipEngines = [];
+    let shipMissions = [];
     let shipName = [];
 
+    //Call API and set data to the arrays created previously
     axios
       .get("https://api.spacexdata.com/v3/ships")
       .then((res) => {
         console.log(res);
         for (const dataObj of res.data) {
-          shipEngines.push(parseInt(dataObj.missions.length));
+          shipMissions.push(parseInt(dataObj.missions.length));
           shipName.push(dataObj.ship_name);
         }
+
+        //Set graph data with shipMissions and shipName arrays into the chartData variable
         setChartData({
           labels: shipName,
           datasets: [
             {
               label: "Number of Missions",
-              data: shipEngines,
+              data: shipMissions,
               borderWidth: 10,
               hoverBorderWidth: 20,
               backgroundColor: "rgba(255,255,255,0.1)",
@@ -79,6 +83,7 @@ export const ShipChart = () => {
           ],
         });
       })
+      //Send an error if the API call fails
       .catch((err) => {
         console.log(err);
       });
@@ -88,6 +93,7 @@ export const ShipChart = () => {
     chart();
   }, []);
 
+  //Use the chartData to populate the chart
   return (
     <Fragment>
       <div>

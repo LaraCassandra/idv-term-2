@@ -3,21 +3,24 @@ import { Line } from "react-chartjs-2";
 import axios from "axios";
 
 export const CapsuleMissions = () => {
+  //Create variable to contain the data to populate the chart
   const [chartData, setChartData] = useState({});
-  //const [successRate, setSuccessRate] = useState({});
 
+  //Make the capsuleMissions and capsuleName arrays to contain the API data
   const chart = () => {
     let capsuleMissions = [];
     let capsuleName = [];
 
+    //Call API and set the data to the arrays
     axios
       .get("https://api.spacexdata.com/v3/capsules")
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         for (const dataObj of res.data) {
-          capsuleMissions.push(parseInt(dataObj.landings));
+          capsuleMissions.push(parseInt(dataObj.missions.length));
           capsuleName.push(dataObj.capsule_serial);
         }
+        //Set graph data with the arrays into the chartData variable
         setChartData({
           labels: capsuleName,
           datasets: [
@@ -79,6 +82,7 @@ export const CapsuleMissions = () => {
           ],
         });
       })
+      //Send an error if the API call fails
       .catch((err) => {
         console.log(err);
       });
@@ -88,6 +92,7 @@ export const CapsuleMissions = () => {
     chart();
   }, []);
 
+  //Use the chartData variable to populate the chart
   return (
     <Fragment>
       <div>

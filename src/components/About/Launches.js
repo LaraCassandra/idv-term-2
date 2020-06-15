@@ -18,19 +18,23 @@ const useStyles = makeStyles({
 export const Launches = () => {
   const classes = useStyles();
 
+  //Create variable to store API data
   const [launches, setLaunches] = useState(0);
 
+  //Call API and set data to variables
   useEffect(() => {
     fetch("https://api.spacexdata.com/v3/launches")
       .then((response) => response.json())
       .then((data) => {
         setLaunches(parseInt(data.length));
       })
+      //Send an error if API call fails
       .catch((err) => {
         console.log(`Fetch failed: ${err}`);
       });
   }, []);
 
+  //Use variables to display API data
   return (
     <Fragment>
       <div className={classes.item}>

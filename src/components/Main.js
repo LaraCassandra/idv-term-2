@@ -72,6 +72,7 @@ export const Main = (props) => {
             classes={{ root: classes.dividerColour }}
           ></Divider>
 
+          {/* ABOUT TILES */}
           <Launches />
           <Missions />
           <History />
@@ -92,6 +93,7 @@ export const Main = (props) => {
             classes={{ root: classes.dividerColour }}
           ></Divider>
 
+          {/* CAPSULE GRAPHS */}
           <div className={classes.graph}>
             <Typography className={classes.subtitle}>LANDINGS</Typography>
             <CapsuleLandings />
@@ -105,7 +107,7 @@ export const Main = (props) => {
           </div>
         </div>
 
-        {/* CONTENT 3 - Rockets */}
+        {/* CONTENT 3 - ROCKETS */}
         <div className={classes.content}>
           <Typography className={classes.title}>ROCKETS</Typography>
           <Divider
@@ -117,7 +119,7 @@ export const Main = (props) => {
 
           <Rockets />
 
-          {/* CONTENT 3 - Rockets */}
+          {/* ROCKET GRAPHS */}
           <div className={classes.graph}>
             <Typography className={classes.subtitle}>ROCKET HEIGHT</Typography>
             <RocketChart />
@@ -138,6 +140,7 @@ export const Main = (props) => {
             classes={{ root: classes.dividerColour }}
           ></Divider>
 
+          {/* SHIP GRAPHS */}
           <div className={classes.graph}>
             <Typography className={classes.subtitle}>
               NUMBER OF MISSIONS

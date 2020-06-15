@@ -27,11 +27,13 @@ const useStyles = makeStyles({
 export const Info = () => {
   const classes = useStyles();
 
+  //Create variables to store data from API
   const [founder, setFounder] = useState(0);
   const [description, setDescription] = useState(0);
   const [company, setCompany] = useState(0);
   const [founded, setFounded] = useState(0);
 
+  //Call API and set data to the variables
   useEffect(() => {
     fetch("https://api.spacexdata.com/v3/info")
       .then((response) => response.json())
@@ -41,11 +43,13 @@ export const Info = () => {
         setCompany(data.name);
         setDescription(data.summary);
       })
+      //Send an error if API call fails
       .catch((err) => {
         console.log(`Fetch failed: ${err}`);
       });
   }, []);
 
+  //Use the variables to display API data
   return (
     <Fragment>
       <div className={classes.item}>

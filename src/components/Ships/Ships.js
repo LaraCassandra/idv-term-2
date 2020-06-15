@@ -32,14 +32,17 @@ const useStyles = makeStyles({
 export const Ships = () => {
   const classes = useStyles();
 
-  const [rocket, setRockets] = useState([]);
+  //Create constants to set API data to
+  const [ship, setShip] = useState([]);
 
+  //Call API and set data to setShip array
   useEffect(() => {
     fetch("https://api.spacexdata.com/v3/ships")
       .then((response) => response.json())
       .then((data) => {
-        setRockets(data);
+        setShip(data);
       })
+      //Send an error if the API call fails
       .catch((err) => {
         console.log(`Fetch failed: ${err}`);
       });
@@ -48,8 +51,8 @@ export const Ships = () => {
   return (
     <Fragment>
       <ul>
-        {rocket.length
-          ? rocket.map((s) => {
+        {ship.length
+          ? ship.map((s) => {
               return (
                 <li key={s.id} className={classes.item}>
                   <img alt="" src={s.image} className={classes.images} />
