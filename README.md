@@ -1,4 +1,4 @@
-## **Rocket League**
+## **Star League**
 
 #### By Lara Cook | 190218
 
@@ -16,7 +16,7 @@ The project required me to create an interactive dashboard making use of NPM, Re
 
 **The Project**
 
-Rocket League is a dynamic single page website that allows users to view visually displayed information, populated by the SpaceX API.
+Star League is a dynamic single page website that allows users to view visually displayed information, populated by the SpaceX API.
 
 This project assumes you have NPM. Before beginning, please make sure you have NPM correctly installed.
 
