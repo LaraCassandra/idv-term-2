@@ -25,7 +25,7 @@ export const CapsuleMissions = () => {
           labels: capsuleName,
           datasets: [
             {
-              label: "Landings",
+              label: "Missions",
               data: capsuleMissions,
               borderWidth: 10,
               hoverBorderWidth: 20,

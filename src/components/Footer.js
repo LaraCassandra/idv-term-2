@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     paddingBottom: "20px",
   },
   dividerColour: {
-    margin: "0 4% 0 19%",
+    margin: "0 4% 0 18%",
     height: "3px",
     backgroundImage: "linear-gradient(130deg, #014871, purple, red, orange)",
   },
@@ -30,6 +30,11 @@ const useStyles = makeStyles({
     fontSize: "15px",
     float: "left",
     paddingTop: "20px",
+  },
+  hover: {
+    "&:hover": {
+      cursor: "pointer",
+    },
   },
   footerText2: {
     color: "#A9A9A9",
@@ -56,15 +61,15 @@ export const Footer = (props) => {
         ></Divider>
 
         <div className={classes.footerText}>
-          <p>ABOUT US</p>
-          <p>CONTACT</p>
-          <p>TERMS & CONDITIONS</p>
+          <p className={classes.hover}>ABOUT US</p>
+          <p className={classes.hover}>CONTACT</p>
+          <p className={classes.hover}>TERMS & CONDITIONS</p>
         </div>
 
         <div className={classes.footerText2}>
-          <p>WORK WITH US</p>
-          <p>PRIVACY POLICIES</p>
-          <p>SERVICES</p>
+          <p className={classes.hover}>WORK WITH US</p>
+          <p className={classes.hover}>PRIVACY POLICIES</p>
+          <p className={classes.hover}>SERVICES</p>
         </div>
       </div>
 

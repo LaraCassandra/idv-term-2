@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { makeStyles, Typography, Divider } from "@material-ui/core";
 import Launches from "./About/Launches";
 import Rockets from "./Rockets/Rockets";
-import Ships from "./Ships/Ships";
 import RocketChart from "./Rockets/RocketChart";
 import RocketSuccessChart from "./Rockets/RocketSuccessChart";
 import ShipChart from "./Ships/ShipChart";
@@ -13,11 +12,12 @@ import History from "./About/History";
 import LaunchPads from "./About/LaunchPads";
 import Info from "./About/Info";
 import CapsuleMissions from "./Capsules/CapsuleMissions";
+import Cards from "./Ships/Cards";
 
 const useStyles = makeStyles({
   mainArea: {
     width: "auto",
-    height: "3530px",
+    height: "5250px",
     backgroundImage: "linear-gradient(black, black)",
   },
   content: {
@@ -72,15 +72,15 @@ export const Main = (props) => {
             classes={{ root: classes.dividerColour }}
           ></Divider>
 
+          <div>
+            <Info />
+          </div>
+
           {/* ABOUT TILES */}
           <Launches />
           <Missions />
           <History />
           <LaunchPads />
-
-          <div>
-            <Info />
-          </div>
         </div>
 
         {/* CONTENT 2 - CAPSULES */}
@@ -153,7 +153,9 @@ export const Main = (props) => {
             <ShipWeightChart />
           </div>
 
-          <Ships />
+          <div className={classes.test}>
+            <Cards />
+          </div>
         </div>
       </div>
     </Fragment>
