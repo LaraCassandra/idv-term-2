@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     backgroundColor: "#232323",
     width: "328px",
     height: "100px",
-    margin: "0 30px 30px 40px",
+    margin: "0 30px 40px 40px",
     paddingTop: "15px",
     color: "#07a3b2",
     float: "left",

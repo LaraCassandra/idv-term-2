@@ -72,15 +72,15 @@ export const Main = (props) => {
             classes={{ root: classes.dividerColour }}
           ></Divider>
 
-          <div>
-            <Info />
-          </div>
-
           {/* ABOUT TILES */}
           <Launches />
           <Missions />
           <History />
           <LaunchPads />
+
+          <div>
+            <Info />
+          </div>
         </div>
 
         {/* CONTENT 2 - CAPSULES */}

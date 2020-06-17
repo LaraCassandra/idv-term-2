@@ -34,6 +34,7 @@ const useStyles = makeStyles({
   hover: {
     "&:hover": {
       cursor: "pointer",
+      color: "white",
     },
   },
   footerText2: {
